@@ -109,6 +109,14 @@
         padding: 5px 0;
     }
     
+    footer {
+        width: 100%;
+        padding: 10px 0;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        text-align: center;
+    }
+    
     @media only screen and (min-device-width:0px) and (max-device-width: 500px) {
         MyGlobe {
             float: none;
@@ -117,6 +125,10 @@
         .middle {
             width: 100%;
             padding: 10px 10px;
+        }
+        .land:hover {
+            fill: red;
+            stroke-width: 1px;
         }
     }
 </style>
@@ -325,6 +337,9 @@
 
         };
     </script>
+    <footer>
+        <h6>DEVELOPED USING API © R.K.Nathani</h6>
+    </footer>
 </body>
 
 </html>
