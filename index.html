@@ -257,6 +257,9 @@
                     rotateMe(d);
                     console.log(countryById[d.id]);
                     country_name = countryById[d.id];
+                    var url = 'https://coronavirus247.herokuapp.com/coronavirusdata/api/v1?key=DMDWJ2LHn8hLRT1VfS9bEQqGGLaU1z7K56IDJUiH819wcRFzEk9fHQGTnfefOAYh07Hfwx';
+                    var xhr = createCORSRequest('GET', url);
+                    xhr.send();
 
                     fetch('https://coronavirus247.herokuapp.com/coronavirusdata/api/v1?key=DMDWJ2LHn8hLRT1VfS9bEQqGGLaU1z7K56IDJUiH819wcRFzEk9fHQGTnfefOAYh07Hfwx')
                         .then(res => res.json())
