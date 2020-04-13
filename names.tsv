@@ -17,35 +17,35 @@ id	name
 204	Benin
 64	Bhutan
 68	Bolivia
-70	Bosnia-and-Herzegovina
+70	Bosnia and Herzegovina
 72	Botswana
 76	Brazil
-96	Brunei-Darussalam
+96	Brunei Darussalam
 100	Bulgaria
-854	Burkina-Faso
+854	Burkina Faso
 108	Burundi
 116	Cambodia
 120	Cameroon
 124	Canada
-140	Central-African-Republic
+140	Central African Republic
 148	Chad
 152	Chile
 156	China
 170	Colombia
 178	Congo
-180	congo-(kinshasa)
-188	Costa-Rica
-384	Cote-d'Ivoire
+180	congo (kinshasa)
+188	Costa Rica
+384	Cote d'Ivoire
 191	Croatia
 192	Cuba
 196	Cyprus
-203	Czech-Republic
+203	Czech Republic
 208	Denmark
 262	Djibouti
-214	Dominican-Republic
+214	Dominican Republic
 218	Ecuador
 818	Egypt
-222	El-Salvador
+222	El Salvador
 226	Equatorial Guinea
 232	Eritrea
 233	Estonia
@@ -54,7 +54,7 @@ id	name
 242	Fiji
 246	Finland
 250	France
-260	French-Southern-Territories
+260	French Southern Territories
 266	Gabon
 270	Gambia
 268	Georgia
@@ -64,7 +64,7 @@ id	name
 304	Greenland
 320	Guatemala
 324	Guinea
-624	Guinea-Bissau
+624	Guinea Bissau
 328	Guyana
 332	Haiti
 340	Honduras
@@ -82,8 +82,8 @@ id	name
 400	Jordan
 398	Kazakhstan
 404	Kenya
-408	Korea-South
-410	Republic-Of-Korea
+408	Korea South
+410	Republic Of Korea
 414	Kuwait
 417	Kyrgyzstan
 418	Lao People's Democratic Republic
@@ -94,7 +94,7 @@ id	name
 434	Libya
 440	Lithuania
 442	Luxembourg
-807	North-Macedonia
+807	North Macedonia
 450	Madagascar
 454	Malawi
 458	Malaysia
@@ -111,7 +111,7 @@ id	name
 524	Nepal
 528	Netherlands
 540	New Caledonia
-554	New-Zealand
+554	New Zealand
 558	Nicaragua
 562	Niger
 566	Nigeria
@@ -120,18 +120,18 @@ id	name
 586	Pakistan
 275	Palestine
 591	Panama
-598	Papua-New-Guinea
+598	Papua New Guinea
 600	Paraguay
 604	Peru
 608	Philippines
 616	Poland
 620	Portugal
-630	Puerto-Rico
+630	Puerto Rico
 634	Qatar
 642	Romania
 643	Russia
 646	Rwanda
-682	Saudi-Arabia
+682	Saudi Arabia
 686	Senegal
 688	Serbia
 694	Sierra Leone
@@ -139,10 +139,10 @@ id	name
 705	Slovenia
 90	Solomon Islands
 706	Somalia
-710	South-Africa
+710	South Africa
 728	South Sudan
 724	Spain
-144	Sri-Lanka
+144	Sri Lanka
 729	Sudan
 740	Suriname
 748	Swaziland
@@ -153,9 +153,9 @@ id	name
 762	Tajikistan
 834	Tanzania
 764	Thailand
-626	Timor-Leste
+626	Timor Leste
 768	Togo
-780	Trinidad-and-Tobago
+780	Trinidad and Tobago
 788	Tunisia
 792	Turkey
 795	Turkmenistan

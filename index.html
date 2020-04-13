@@ -138,14 +138,16 @@
     <div class="middle">
         <h1>Corona Cases Live 🔴</h1>
         <h3>Check out the Countries</h3>
-        <div class="display">
+        <div class="display" id="dp">
             <h4 id="cnname">COUNTRY : </h4>
-            <h4 id="ncases">NEW-CASES :</h4>
+            <h4 id="cntname">CONTINENT : </h4>
             <h4 id="tcases">TOTAL-CASES :</h4>
-            <h4 id="ndeaths">NEW-DEATHS :</h4>
+            <h4 id="acases">ACTIVE-CASES :</h4>
+            <h4 id="critical">CRITICAL :</h4>
             <h4 id="tdeaths">TOTAL-DEATHS :</h4>
-            <h4 id="nrecover">NEW-RECOVERED :</h4>
             <h4 id="trecover">TOTAL-RECOVERED :</h4>
+            <h4 id="ttests">TOTAL-TESTS :</h4>
+
 
         </div>
     </div>
@@ -255,26 +257,41 @@
                     rotateMe(d);
                     console.log(countryById[d.id]);
                     country_name = countryById[d.id];
-                    var dynamicUrl = 'https://api.covid19api.com/summary';
+                    var dynamicUrl = 'https://coronavirus247.herokuapp.com/coronavirusdata/api/v1?key=DMDWJ2LHn8hLRT1VfS9bEQqGGLaU1z7K56IDJUiH819wcRFzEk9fHQGTnfefOAYh07Hfwx';
                     $.getJSON(dynamicUrl, function(data) {
                         console.log("This is an example of a dynamic JSON file being served by a web server.")
-                        console.log(data.Countries[2].Slug);
+
+                        // console.log("country" + JSON.stringify(data[54]));
                         var cnname = document.getElementById("cnname");
-                        var ncases = document.getElementById("ncases");
+                        var cntname = document.getElementById("cntname");
                         var tcases = document.getElementById("tcases");
-                        var ndeaths = document.getElementById("ndeaths");
+                        var acases = document.getElementById("acases");
+                        var critical = document.getElementById("critical");
                         var tdeaths = document.getElementById("tdeaths");
-                        var nrecover = document.getElementById("nrecover");
                         var trecover = document.getElementById("trecover");
+                        var ttests = document.getElementById("ttests");
+
                         cnname.innerHTML = "COUNTRY : " + country_name.toUpperCase();
-                        for (i = 1; i < data.Countries.length; i++) {
-                            if (data.Countries[i].Slug == country_name.toLowerCase()) {
-                                ncases.innerHTML = "NEW-CASES : " + data.Countries[i].NewConfirmed;
-                                tcases.innerHTML = "TOTAL-CASES : " + data.Countries[i].TotalConfirmed;
-                                ndeaths.innerHTML = "NEW-DEATHS : " + data.Countries[i].NewDeaths;
-                                tdeaths.innerHTML = "TOTAL-DEATHS : " + data.Countries[i].TotalDeaths;
-                                nrecover.innerHTML = "NEW-RECOVERED : " + data.Countries[i].NewRecovered;
-                                trecover.innerHTML = "TOTAL-RECOVERED : " + data.Countries[i].TotalRecovered;
+
+
+
+                        for (i = 1; i < data.length; i++) {
+
+
+                            var str = JSON.stringify(data[i].Country.toLowerCase());
+                            var len = str.length;
+                            var ns = str.slice(1, len - 1);
+
+
+                            if (ns == country_name.toLowerCase()) {
+                                cntname.innerHTML = "CONTINENT : " + (data[i]["Continent"]);
+                                tcases.innerHTML = "TOTAL-CASES : " + (data[i]["Total\nCases"]);
+                                acases.innerHTML = "ACTIVE-CASES : " + (data[i]["Active\nCases"]);
+                                critical.innerHTML = "CRITICAL : " + (data[i]["Serious,\nCritical"]);
+                                tdeaths.innerHTML = "TOTAL-DEATHS : " + (data[i]["Total\nDeaths"]);
+                                trecover.innerHTML = "TOTAL-RECOVERED : " + (data[i]["Total\nRecovered"]);
+                                ttests.innerHTML = "TOTAL-TESTS : " + (data[i]["Total\nTests"]);
+
                             }
                         }
                     });
