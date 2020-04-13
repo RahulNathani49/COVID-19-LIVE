@@ -257,44 +257,44 @@
                     rotateMe(d);
                     console.log(countryById[d.id]);
                     country_name = countryById[d.id];
-                    var dynamicUrl = 'https://coronavirus247.herokuapp.com/coronavirusdata/api/v1?key=DMDWJ2LHn8hLRT1VfS9bEQqGGLaU1z7K56IDJUiH819wcRFzEk9fHQGTnfefOAYh07Hfwx';
-                    $.getJSON(dynamicUrl, function(data) {
-                        console.log("This is an example of a dynamic JSON file being served by a web server.")
 
-                        // console.log("country" + JSON.stringify(data[54]));
-                        var cnname = document.getElementById("cnname");
-                        var cntname = document.getElementById("cntname");
-                        var tcases = document.getElementById("tcases");
-                        var acases = document.getElementById("acases");
-                        var critical = document.getElementById("critical");
-                        var tdeaths = document.getElementById("tdeaths");
-                        var trecover = document.getElementById("trecover");
-                        var ttests = document.getElementById("ttests");
-
-                        cnname.innerHTML = "COUNTRY : " + country_name.toUpperCase();
-
+                    fetch('https://coronavirus247.herokuapp.com/coronavirusdata/api/v1?key=DMDWJ2LHn8hLRT1VfS9bEQqGGLaU1z7K56IDJUiH819wcRFzEk9fHQGTnfefOAYh07Hfwx')
+                        .then(res => res.json())
+                        .then(json => {
+                            console.log(json);
+                            var cnname = document.getElementById("cnname");
+                            var cntname = document.getElementById("cntname");
+                            var tcases = document.getElementById("tcases");
+                            var acases = document.getElementById("acases");
+                            var critical = document.getElementById("critical");
+                            var tdeaths = document.getElementById("tdeaths");
+                            var trecover = document.getElementById("trecover");
+                            var ttests = document.getElementById("ttests");
+                            cnname.innerHTML = "COUNTRY : " + country_name.toUpperCase();
 
 
-                        for (i = 1; i < data.length; i++) {
+                            for (i = 1; i < json.length; i++) {
 
 
-                            var str = JSON.stringify(data[i].Country.toLowerCase());
-                            var len = str.length;
-                            var ns = str.slice(1, len - 1);
+                                var str = JSON.stringify(json[i].Country.toLowerCase());
+                                var len = str.length;
+                                var ns = str.slice(1, len - 1);
 
 
-                            if (ns == country_name.toLowerCase()) {
-                                cntname.innerHTML = "CONTINENT : " + (data[i]["Continent"]);
-                                tcases.innerHTML = "TOTAL-CASES : " + (data[i]["Total\nCases"]);
-                                acases.innerHTML = "ACTIVE-CASES : " + (data[i]["Active\nCases"]);
-                                critical.innerHTML = "CRITICAL : " + (data[i]["Serious,\nCritical"]);
-                                tdeaths.innerHTML = "TOTAL-DEATHS : " + (data[i]["Total\nDeaths"]);
-                                trecover.innerHTML = "TOTAL-RECOVERED : " + (data[i]["Total\nRecovered"]);
-                                ttests.innerHTML = "TOTAL-TESTS : " + (data[i]["Total\nTests"]);
+                                if (ns == country_name.toLowerCase()) {
+                                    cntname.innerHTML = "CONTINENT : " + (json[i]["Continent"]);
+                                    tcases.innerHTML = "TOTAL-CASES : " + (json[i]["Total\nCases"]);
+                                    acases.innerHTML = "ACTIVE-CASES : " + (json[i]["Active\nCases"]);
+                                    critical.innerHTML = "CRITICAL : " + (json[i]["Serious,\nCritical"]);
+                                    tdeaths.innerHTML = "TOTAL-DEATHS : " + (json[i]["Total\nDeaths"]);
+                                    trecover.innerHTML = "TOTAL-RECOVERED : " + (json[i]["Total\nRecovered"]);
+                                    ttests.innerHTML = "TOTAL-TESTS : " + (json[i]["Total\nTests"]);
 
+                                }
                             }
-                        }
-                    });
+
+
+                        })
                 })
                 .on("mouseover", function(d) {
 
